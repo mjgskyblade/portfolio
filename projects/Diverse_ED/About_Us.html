@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="DO27tbpvnYcPSINm8gtM1VgztNviSdCxEdXigs00IlE" />
+    <title>Diverse_ED</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+html{
+    background-color: #1e1f26;
+}
+
+
+h1{
+    color: #ffffff;
+}
+
+p{
+    color: #ffffff;
+}
+
+/* Redesign site */
+.logo{
+    position: relative;
+    max-height: 55px;
+    max-width: 240px;
+}
+
+  /* Redesign site */
+  /* Set the body background color to a dark blue gradient */
+  body {
+    background-color: #1e1f26;
+  }
+
+  /* Set the card background color to grey and add rounded edges */
+  .card-body {
+    background-color: #ffffff;
+    border-radius: 10px;
+  }
+
+  /* Add a subtle aqua glow to the cards when hovered over */
+  .card:hover {
+    box-shadow: 0 0 10px aqua;
+    transition: box-shadow 0.3s ease-in-out;
+    transform: translateY(-5px);
+  }
+
+  /* Add a pop-up effect to the cards */
+  .card-container {
+    perspective: 1000px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    height: 450px;
+  }
+
+  .card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease-in-out;
+    width: 90%;
+    margin: auto;
+  }
+
+  /* Set the navbar background color to dark and reduce the height */
+  .navbar{
+  background-color: #212529 !important;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; 
+}
+
+  .navbar-nav .nav-link {
+  border-radius: 20px;
+}
+
+/* Give the nav links a button depressive effect */
+.navbar-dark .navbar-nav .nav-link {
+transition: all 0.3s ease-in-out;
+box-shadow: 0 0 0 wheat;
+background-color: transparent;
+}
+
+/* Give the nav links a button depressive effect */
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:active {
+color: wheat;
+text-shadow: 0 0 5px wheat;
+}
+
+/* Add a subtle #654160 glow to the navbar links when hovered over */
+.navbar-dark .navbar-nav .nav-link:hover {
+border-radius: 10px;
+box-shadow: 0 0 10px wheat;
+transition: box-shadow 0.3s ease-in-out;
+transform: translateY(-2px);
+}
+
+/* Depress and illuminate the navbar links more when clicked */
+.navbar-dark .navbar-nav .nav-link:active {
+background-color: #333333;
+box-shadow: inset 0 0 10px wheat;
+transform: translateY(0);
+}
+ 
+
+.card {
+  position: absolute;
+  top: 80px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px wheat;
+  background: #333;
+  padding: 30px;
+}
+
+@media (max-width: 767px){
+.card {
+  position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #212529;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    height: 128vh;
+}}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: #212529;
+  border-radius: 10px;
+  z-index: -1;
+  box-shadow: 0 0 20px wheat;
+}
+
+@media (max-width: 767px){
+  .card::before {
+    content: "";
+    position: absolute;
+    height: 129vh;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: #212529;
+    border-radius: 10px;
+    z-index: -1;
+    box-shadow: 0 0 20px wheat;
+}}
+
+.card:hover::before {
+  transform: translate(-5px, -5px);
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: wheat;
+  border-radius: 10px;
+  z-index: -2;
+  filter: blur(20px);
+}
+
+.card:hover::after {
+  transform: translate(5px, 5px);
+}
+
+p {
+  color: wheat;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 767px){
+.navbar-collapse {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    background: #212529;
+}}
+  
+  @media (max-width: 767px) {
+  .logo {
+    position: relative;
+    top: -9px;
+    max-height: 55px;
+    max-width: 240px;
+} }
+
+</style>
+  </head>
+    <header>
+      
+        <!-- Navigation bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="main-navbar">
+            <a class="navbar-brand" href="index.html"><img class="logo" id="logo" src="" alt="Diverse_ED"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="scholarships.html">Scholarships</a>
+              </li>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Contact Us.html">Contact Us</a>
+              </li>
+            </ul>
+        </div>
+        </nav>
+    </header>
+  <body>
+    <div class="card">
+        <h1>Welcome to Diverse_ED</h1>
+        <p>We are a community dedicated to promoting cultural diversity and the importance of international experiences. </p>
+			<p>Our founder started by creating a Facebook page, and as the community grew, he realized that there was a need for a website that would provide more information and resources for students interested in studying abroad. And so, this website was born!</p>
+			<p>We believe that it is essential to experience diverse or different cultures, as it helps to broaden the mind and foster empathy, understanding, and respect for others. When we travel, study, or work abroad, we expose ourselves to new perspectives, ideas, and ways of life, which can enrich our personal and professional lives.</p>
+			<p>Our goal is to help students from all over the world access scholarships and other resources that will enable them to pursue their dreams of studying abroad. We want to help you gain the knowledge, skills, and experiences that will prepare you for success in today's globalized world.</p>
+			<p>Thank you for joining us on this journey! We hope that you find our website helpful, informative, and inspiring. Please don't hesitate to reach out to us if you have any questions or suggestions. Together, let's create a world where cultural diversity is celebrated and embraced!</p>
+            <p>Copyright © Divers_ED</p>
+      </div>  
+       <!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-storage-compat.js"></script>
+
+	<!-- Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script>
+	// Initialize Firebase
+	const firebaseConfig = {
+  apiKey: "AIzaSyAee__AWxes4-gNe8dJtmuserVV1M4Hjlg",
+  authDomain: "scholarships-23fa.firebaseapp.com",
+  databaseURL: "https://scholarships-23fa-default-rtdb.firebaseio.com",
+  projectId: "scholarships-23fa",
+  storageBucket: "scholarships-23fa.appspot.com",
+  messagingSenderId: "196486698243",
+  appId: "1:196486698243:web:ae5df8bca25ee8aef58536",
+  measurementId: "G-DBVYV0QPV7"
+};
+firebase.initializeApp(firebaseConfig);
+
+// Create a reference to the logo image in Firebase storage
+var storageRef = firebase.storage().ref().child('1661589874097.png');
+
+// Get the download URL of the logo image
+storageRef.getDownloadURL().then(function(url) {
+  // Use the URL to display the logo image in your web page
+  var logoImage = document.getElementById("logo");
+  logoImage.src = url;
+}).catch(function(error) {
+  console.log(error);
+});
+</script>    
+  </body>
+</html>

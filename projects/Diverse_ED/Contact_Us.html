@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="DO27tbpvnYcPSINm8gtM1VgztNviSdCxEdXigs00IlE" />
+  <title>Diverse_ED</title>
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+html{
+    background-color: #1e1f26;
+}
+
+
+h1{
+    color: #ffffff;
+}
+
+p{
+    color: #ffffff;
+}
+
+/* Redesign site */
+.logo{
+    position: relative;
+    max-height: 55px;
+    max-width: 240px;
+}
+
+  /* Redesign site */
+  /* Set the body background color to a dark blue gradient */
+  body {
+    background-color: #1e1f26;
+  }
+
+  /* Set the navbar background color to dark and reduce the height */
+  .navbar{
+  background-color: #333333;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; 
+}
+
+  .navbar-nav .nav-link {
+  border-radius: 20px;
+}
+
+/* Give the nav links a button depressive effect */
+.navbar-dark .navbar-nav .nav-link {
+transition: all 0.3s ease-in-out;
+box-shadow: 0 0 0 wheat;
+background-color: transparent;
+}
+
+/* Give the nav links a button depressive effect */
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:active {
+color: wheat;
+text-shadow: 0 0 5px wheat;
+}
+
+/* Add a subtle #654160 glow to the navbar links when hovered over */
+.navbar-dark .navbar-nav .nav-link:hover {
+border-radius: 10px;
+box-shadow: 0 0 10px wheat;
+transition: box-shadow 0.3s ease-in-out;
+transform: translateY(-2px);
+}
+
+/* Depress and illuminate the navbar links more when clicked */
+.navbar-dark .navbar-nav .nav-link:active {
+background-color: #333333;
+box-shadow: inset 0 0 10px wheat;
+transform: translateY(0);
+}
+
+    
+    .card {
+        position: relative;
+    display: inline-block;
+    width: 600px;
+    height: 250px;
+    background-color: #212529;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    border: none;
+    transition: all 0.3s;
+    margin-left: 450px;
+    margin-top: 260px;
+}
+
+
+@media (max-width: 767px){
+  .card {
+    position: relative;
+    display: inline-block;
+    width: 405px;
+    height: 250px;
+    background-color: #212529;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    border: none;
+    transition: all 0.3s;
+    margin-left: 5px;
+    margin-top: 260px;
+}}
+
+@media (max-width: 767px){
+  .card .qr-code {
+    display: inline-block !important;
+    margin-left: 260px !important;
+    margin-top: 55px !important; 
+    height: 120px !important;
+}}
+
+.card:hover {
+box-shadow: 0 0 10px wheat;
+transition: box-shadow 0.3s ease-in-out;
+transform: translateY(-5px);
+}
+
+@media (max-width: 767px){
+  .card:hover {
+box-shadow: 0 0 10px wheat;
+transition: box-shadow 0.3s ease-in-out;
+transform: translateY(-5px);
+}}
+
+.card::before {
+position: absolute;
+top: -5px;
+left: -5px;
+right: -5px;
+bottom: -5px;
+border: none;
+border-radius: 10px;
+z-index: -1;
+transition: all 0.3s;
+}
+
+@media (max-width: 767px){
+  .card::before {
+    position: relative;
+    display: inline-block;
+    width: 405px;
+    height: 250px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    color: #212529;
+    font-size: 18px;
+    text-align: left;
+    border: none;
+    transition: all 0.3s;
+    margin-left: 5px;
+    margin-top: 260px;
+}}
+
+.card .qr-code {
+position: absolute;
+bottom: 10px;
+right: 10px;
+}
+
+.card:hover::before {
+box-shadow: 0 0 10px wheat;
+transition: box-shadow 0.3s ease-in-out;
+transform: translateY(-5px);
+}
+    
+    .card img {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      height: 30px;
+    }
+    
+    .card h2 {
+      margin-left: 50px;
+    }
+    
+    .card p {
+      margin-top: 20px;
+    }
+    
+    .card ul {
+      margin-top: 20px;
+      list-style: none;
+      padding: 0;
+    }
+    
+    .card ul li {
+      margin-bottom: 10px;
+    }
+    
+    .card ul li i {
+      margin-right: 10px;
+    }
+    
+    .Facebook {
+      color: #3b5998;
+    }
+    
+    .WhatsApp {
+      color: #25D366;
+    }
+    
+    .WeChat {
+      color: #7BB32E;
+    }
+    
+    .card .qr-code {
+    display: inline-block;
+    margin-left: 465px;
+    margin-top: 115px;
+    height: 120px;
+    border-radius: 10px;
+}
+.card span, .card a, .card p {
+  color: wheat;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 767px){
+.navbar-collapse {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    background: #212529;
+}}
+  
+  @media (max-width: 767px) {
+  .logo {
+    position: relative;
+    top: -9px;
+    max-height: 55px;
+    max-width: 240px;
+} }
+
+  </style>
+</head>
+<header>
+      
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="main-navbar">
+        <a class="navbar-brand" href="index.html"><img class="logo" id="logo" src="" alt="Diverse_ED"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="scholarships.html">Scholarships</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="About Us.html">About Us</a>
+          </li>
+         
+        </ul>
+    </div>
+    </nav>
+</header>
+<body>
+  <main>
+    <div class="card">
+        <h2>Contact card</h2>
+        <p>Get in touch</p>
+        <ul>
+          <li><a href="https://www.facebook.com/Diversedzm"><i class="bi bi-facebook Facebook"></i>Facebook</a></li>
+          <li><a href="https://wa.me/260955975565"><i class="bi bi-whatsapp WhatsApp"></i>WhatsApp</a></li>
+          <li>
+            <i class="bi bi-wechat WeChat"></i>
+            <span>WeChat ID: ManganiTemboMJG</span>
+            <img id="Weixin" src="" alt="WeChat QR Code" class="qr-code"></a>
+          </li>
+        </ul>
+      </div>
+  </main>
+  <footer>
+  <center><p>Copyright © Divers_ED</p></center>
+  </footer>
+  <!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-storage-compat.js"></script>
+
+	<!-- Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script>
+	// Initialize Firebase
+	const firebaseConfig = {
+  apiKey: "AIzaSyAee__AWxes4-gNe8dJtmuserVV1M4Hjlg",
+  authDomain: "scholarships-23fa.firebaseapp.com",
+  databaseURL: "https://scholarships-23fa-default-rtdb.firebaseio.com",
+  projectId: "scholarships-23fa",
+  storageBucket: "scholarships-23fa.appspot.com",
+  messagingSenderId: "196486698243",
+  appId: "1:196486698243:web:ae5df8bca25ee8aef58536",
+  measurementId: "G-DBVYV0QPV7"
+};
+firebase.initializeApp(firebaseConfig);
+
+// Create a reference to the logo image in Firebase storage
+var storageRef = firebase.storage().ref().child('1661589874097.png');
+
+// Get the download URL of the logo image
+storageRef.getDownloadURL().then(function(url) {
+  // Use the URL to display the logo image in your web page
+  var logoImage = document.getElementById("logo");
+  logoImage.src = url;
+}).catch(function(error) {
+  console.log(error);
+});
+
+var wechatQRRef = firebase.storage().ref().child('Weixin.png');
+wechatQRRef.getDownloadURL().then(function(url) {
+  var wechatQRImage = document.getElementById('Weixin');
+  wechatQRImage.src = url;
+}).catch(function(error) {
+  console.log(error);
+});
+</script>
+</body>
+</html>

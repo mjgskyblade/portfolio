@@ -1,0 +1,92 @@
+<html>
+<head>
+	<title>Add Ad</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Firebase -->
+	<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-database-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-storage-compat.js"></script>
+
+	<!-- Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script>
+		// Initialize Firebase
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		const firebaseConfig = {
+			apiKey: "AIzaSyAee__AWxes4-gNe8dJtmuserVV1M4Hjlg",
+			authDomain: "scholarships-23fa.firebaseapp.com",
+			databaseURL: "https://scholarships-23fa-default-rtdb.firebaseio.com",
+			projectId: "scholarships-23fa",
+			storageBucket: "scholarships-23fa.appspot.com",
+			messagingSenderId: "196486698243",
+			appId: "1:196486698243:web:ae5df8bca25ee8aef58536",
+			measurementId: "G-DBVYV0QPV7"
+		};
+		firebase.initializeApp(firebaseConfig);
+
+		function addAd() {
+			// get form inputs
+			var adTitle = $("#ad-title").val();
+			var adImageURL = $("#ad-image-url").val();
+			var adExpiryDate = $("#ad-expiry-date").val();
+			var adLearnMoreLink = $("#ad-learn-more-link").val();
+
+			// add ad to Firebase
+			var databaseRef = firebase.database().ref("ads");
+			databaseRef.push({
+				adTitle: adTitle,
+				adImageURL: adImageURL,
+				adExpiryDate: adExpiryDate,
+				adLearnMoreLink: adLearnMoreLink,
+				uploadDate: new Date().toISOString(),
+				deleteDate: new Date(adExpiryDate).toISOString()
+			})
+				.then(function () {
+					alert("Ad added successfully.");
+					$("#ad-title").val("");
+					$("#ad-image-url").val("");
+					$("#ad-expiry-date").val("");
+					$("#ad-learn-more-link").val("");
+				})
+				.catch(function (error) {
+					console.error("Error adding ad: ", error);
+					alert("Error adding ad. Please try again.");
+				});
+		}
+
+	</script>
+
+</head>
+<body>
+
+<div class="container mt-5">
+	<h2>Add Ad</h2>
+	<form>
+		<div class="form-group">
+			<label for="ad-title">Ad Title:</label>
+			<input type="text"name="ad-title" class="form-control" id="ad-title" required>
+        </div>
+        <div class="form-group">
+        <label for="ad-image-url">Ad Image URL:</label>
+        <input type="url" name="ad-image-url" class="form-control" id="ad-image-url" required>
+        </div>
+        <div class="form-group">
+        <label for="ad-expiry-date">Ad Expiry Date:</label>
+        <input type="date" name="ad-expiry-date" class="form-control" id="ad-expiry-date" required>
+        </div>
+        <div class="form-group">
+        <label for="ad-learn-more-link">Ad Learn More Link:</label>
+        <input type="url" name="ad-learn-more-link" class="form-control" id="ad-learn-more-link" required>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="addAd()">Add Ad</button>
+        </form>
+        
+        </div>
+        </body>
+        </html>

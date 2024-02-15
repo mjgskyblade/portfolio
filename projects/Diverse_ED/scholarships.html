@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="DO27tbpvnYcPSINm8gtM1VgztNviSdCxEdXigs00IlE" />
+  <title>Diverse_ED</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+
+  <style>
+
+/* Redesign site */
+.logo{
+    position: relative;
+    max-height: 55px;
+    max-width: 240px;
+}
+
+  html {
+    background-color: #1e1f26;
+  }
+  
+  body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    /* color: #ffffff; */
+    text-align: left;
+    background-color: #343A40 !important;
+}
+
+.search {
+    position: relative;
+    top: 55px;
+    z-index: 1;
+  }
+  /* Set the card background color to grey and add rounded edges */
+  .card-body {
+    background-color: #333333;
+    border-radius: 10px;
+  }
+
+  /* Add a subtle aqua glow to the cards when hovered over */
+  .card:hover {
+    box-shadow: 0 0 10px aqua;
+    transition: box-shadow 0.3s ease-in-out;
+    transform: translateY(-5px);
+  }
+
+  /* Add a pop-up effect to the cards */
+  .card-container {
+    perspective: 1000px;
+    display: grid;
+    margin-top: 72px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    height: 450px;
+    background-color: #1e1f26;
+}
+  .card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease-in-out;
+    width: 90%;
+    margin: auto;
+    background-color: #333333;
+  }
+
+  .card.h-100 {
+    border: none;
+    border-radius: 10px;
+    background-color: #333333;
+    color: wheat;
+}
+
+.h-100 {
+    height: auto;
+}
+
+
+
+  /* Set the navbar background color to dark and reduce the height */
+  .navbar{
+  background-color: #333333;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; 
+}
+
+  .navbar-nav .nav-link {
+  border-radius: 20px;
+}
+
+/* Give the nav links a button depressive effect */
+.navbar-dark .navbar-nav .nav-link {
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 0 wheat;
+  background-color: transparent;
+}
+
+
+  /* subtle glow to the navbar links when hovered over */
+  .navbar-dark .navbar-nav .nav-link:hover {
+    border-radius: 10px;
+    box-shadow: 0 0 10px wheat;
+    transition: box-shadow 0.3s ease-in-out;
+    transform: translateY(-2px);
+  }
+
+  /* Depress and illuminate the navbar links more when clicked */
+  .navbar-dark .navbar-nav .nav-link:active {
+    background-color: #333333;
+    box-shadow: inset 0 0 10px wheat;
+    transform: translateY(0);
+  }
+
+  /*  heading */
+  .card-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    color: #654160;
+    font-weight: 400;
+    
+  }
+
+  .navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:active {
+  color: wheat;
+  text-shadow: 0 0 5px wheat;
+}
+
+  /* Set the modal body background color to grey */
+  .modal-body {
+    background-color: #333333;
+    color: #ffffff;
+  }
+
+  /* Add an aqua illuminated border around the modal popup */
+  .modal-content {
+    border: 2px solid aqua;
+  }
+
+  .form-inline .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+    border-radius: 20px;
+    background-color: #f4f4f4;
+    color: #4b2e83;
+    border: none;
+}
+
+.mb-0, .my-0 {
+    margin-bottom: 0rem !important;
+    background-color: #343a40;
+}
+
+.btn-outline-success {
+    color: #28a745;
+    border-color: #28a745;
+    border: none !important; 
+    border-radius: 20px !important;
+}
+
+select {
+  position: relative;
+  top: 60px;
+  font-size: 16px;
+  border-radius: 25px;
+  background-color: #f4f4f4;
+  color: #4b2e83; 
+  padding: 8px 12px;
+  width: 200px;
+}
+
+@media (max-width: 767px) {
+  .card-container {
+    perspective: 1000px;
+    padding-top: 93px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    height: 450px;
+    background-color: #1e1f26;
+    justify-content: space-evenly;
+}}
+
+@media (max-width: 767px) {
+  .search {
+    position: relative;
+    top: 55px;
+    z-index: 1;
+}}
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 767px){
+.navbar-collapse {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    background: #212529;
+}}
+  
+  @media (max-width: 767px) {
+  .logo {
+    position: relative;
+    top: -9px;
+    max-height: 55px;
+    max-width: 240px;
+} }
+
+.card-container-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.card {
+  width: 254px; /* Adjust the width as needed for 4 cards per row */
+  margin: 10px;
+
+}
+
+@media (max-width: 992px) {
+  .card {
+    flex: 0 0 calc(33.33% - 20px); /* Adjust the width as needed for 3 cards per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 0 0 calc(50% - 20px); /* Adjust the width as needed for 2 cards per row */
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    flex: 0 0 calc(100% - 20px); /* Adjust the width as needed for 1 card per row */
+  }
+}
+
+
+  </style>
+
+</head>
+<body>
+<header>
+<!-- Navigation bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="main-navbar">
+  <a class="navbar-brand" href="index.html"><img class="logo" id="logo" src="" alt="Diverse_ED"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse  ml-auto" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="scholarships.html">Scholarships</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="About Us.html">About Us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="Contact Us.html">Contact Us</a>
+    </li>
+  </ul>
+</div>
+</nav>
+</header>
+  <main>
+<!-- Search form -->
+<a data-toggle="collapse" href="#searchCollapse" role="button" aria-expanded="false" aria-controls="searchCollapse " class="search">Want to search something more specific? Search here.</a>
+
+<div class="collapse" id="searchCollapse">
+  <form class="form-inline mb-0 search" onsubmit="search(event)">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
+  </form>
+  <!-- Study Level Filter -->
+<select id="studyLevelFilter" onchange="filterCards()">
+  <option value="all">All Study Levels</option>
+  <option value="Bachelor's Degree">Bachelor's Degree</option>
+  <option value="Master's Degree">Master's Degree</option>
+  <option value="PhD">PhD</option>
+</select>
+
+<!-- Scholarship Type Filter -->
+<select id="scholarshipTypeFilter" onchange="filterCards()">
+  <option value="all">All Scholarship Types</option>
+  <option value="full scholarship">Full scholarship</option>
+  <option value="partial scholarship">Partial scholarship</option>
+</select>
+
+<!-- Field Filter -->
+<select id="fieldFilter" onchange="filterCards()">
+  <option value="all">All Fields</option>
+  <option value="Agriculture">Agriculture</option>
+  <option value="Economics">Economics</option>
+  <option value="Engineering">Engineering</option>
+  <option value="Fine arts">Fine Arts</option>
+  <option value="Foundation course">Foundation Course</option>
+  <option value="Legal studies">Legal Studies</option>
+  <option value="Literature">Literature</option>
+  <option value="Management">Management</option>
+  <option value="Medicine">Medicine</option>
+  <option value="Science">Science</option>
+</select>
+
+</div>
+
+
+
+
+    <div class="card-container" id="scholarships">
+        <div class="card" onclick="expandCard(this)">
+          <div class="card-front card-body">
+            <h5 class="card-title programName"></h5>
+            <p class="card-text levelOfStudy"></p>
+            <p class="card-text field"></p>
+            <p class="card-text duration"></p>
+           
+
+          </div>
+
+          <div class="card-back">
+            <div class="modal fade" id="scholarshipModal" tabindex="-1" role="dialog" aria-labelledby="scholarshipModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="scholarshipModalLabel">Scholarship Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+              <p><strong>Program ID:</strong> <span class="programID"></span></p>
+              <p><strong>Application Deadline:</strong> <span class="applicationDeadline"></span></p>
+              <p><strong>Scholarship Type:</strong> <span class="scholarshipType"></span></p>
+              <p><strong>Scholarship Duration:</strong> <span class="scholarshipDuration"></span></p>
+              <p><strong>Scholarship Policy:</strong> <span class="scholarshipPolicy d-none"></span></p>
+              <p><strong>Applicant Requirements:</strong> <span class="applicantRequirements d-none"></span></p>
+              <p><strong>Application Documents:</strong> <span class="applicationDocuments d-none"></span></p>
+              <p><strong>Fee Structure:</strong> <span class="feeStructure"></span></p>
+              <a href="https://form.jotform.com/230823094943054" target="_blank" class="btn btn-primary mt-3">Apply</a>
+            </div>
+          </div>
+      </div>    
+      </div>    
+    </main>
+
+
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-storage-compat.js"></script>
+
+	<!-- Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script>
+    
+	// Initialize Firebase
+	const firebaseConfig = {
+  apiKey: "AIzaSyAee__AWxes4-gNe8dJtmuserVV1M4Hjlg",
+  authDomain: "scholarships-23fa.firebaseapp.com",
+  databaseURL: "https://scholarships-23fa-default-rtdb.firebaseio.com",
+  projectId: "scholarships-23fa",
+  storageBucket: "scholarships-23fa.appspot.com",
+  messagingSenderId: "196486698243",
+  appId: "1:196486698243:web:ae5df8bca25ee8aef58536",
+  measurementId: "G-DBVYV0QPV7"
+};
+	firebase.initializeApp(firebaseConfig);
+
+  // Create a reference to the logo image in Firebase storage
+var storageRef = firebase.storage().ref().child('1661589874097.png');
+
+// Get the download URL of the logo image
+storageRef.getDownloadURL().then(function(url) {
+  // Use the URL to display the logo image in your web page
+  var logoImage = document.getElementById("logo");
+  logoImage.src = url;
+}).catch(function(error) {
+  console.log(error);
+});
+
+
+// Retrieve scholarships from Firebase
+var scholarshipsRef = firebase.database().ref("scholarships");
+scholarshipsRef.on("value", function(snapshot) {
+  // Clear existing scholarships from the container
+  var scholarshipsContainer = document.getElementById("scholarships");
+  scholarshipsContainer.innerHTML = "";
+  scholarshipsContainer.classList.add('card-container-flex');
+
+  // Loop through scholarships in snapshot and create card for each scholarship
+  snapshot.forEach(function(childSnapshot) {
+    var scholarship = childSnapshot.val();
+
+   // Create card for scholarship
+    var card = document.createElement("div");
+    card.innerHTML = `
+      <div class="card h-100">
+        <div class="card-front card-body" onclick="showCardBack(this)">
+          <h5 class="card-title">${scholarship.programName}</h5>
+          <p class="card-text">${scholarship.levelOfStudy}</p>
+          <p class="card-text">${scholarship.field}</p>
+          <p class="card-text">${scholarship.duration} | ${scholarship.intake}</p>
+        </div>
+        <div class="card-back d-none">
+          <p><strong>Program ID:</strong> ${scholarship.programID}</p>
+          <p><strong>Application Deadline:</strong> ${scholarship.applicationDeadline}</p>
+          <p><strong>Scholarship Type:</strong> ${scholarship.scholarshipType}</p>
+          <p><strong>Scholarship Duration:</strong> ${scholarship.scholarshipDuration}</p>
+          <p class="d-none"><strong>Scholarship Policy:</strong> ${scholarship.scholarshipPolicy}</p>
+          <p class="d-none"><strong>Applicant Requirements:</strong> ${scholarship.applicantRequirements}</p>
+          <p class="d-none"><strong>Application Documents:</strong> ${scholarship.applicationDocuments}</p>
+          <p class="d-none"><strong>Fee Structure:</strong> ${scholarship.feeStructure}</p>
+          <p class="d-none"><strong>Special Notes:</strong> ${scholarship.specialNotes}</p>
+          <a href="https://form.jotform.com/230823094943054" target="_blank" class="btn btn-primary mt-3">Apply</a>
+        </div>
+      </div>
+    `;
+
+    scholarshipsContainer.appendChild(card);
+  });
+});
+
+
+
+function showCardBack(cardFront) {
+  // Get the card-back element associated with this card-front element
+  var cardBack = cardFront.nextElementSibling;
+
+  // Toggle the visibility of the elements with class d-none
+  cardBack.querySelectorAll(".d-none").forEach(function(element) {
+    element.classList.toggle("d-none");
+  });
+
+  // Create a Bootstrap modal
+  var modal = $("<div class='modal' tabindex='-1' role='dialog'>" +
+                  "<div class='modal-dialog' role='document'>" +
+                    "<div class='modal-content'>" +
+                      "<div class='modal-header'>" +
+                        "<h5 class='modal-title'>" + cardFront.querySelector('.card-title').innerText + "</h5>" +
+                        "<button type='button' class='close' data-dismiss='modal' aria-label='Close'>" +
+                          "<span aria-hidden='true'>&times;</span>" +
+                        "</button>" +
+                      "</div>" +
+                      "<div class='modal-body'>" +
+                        cardBack.innerHTML +
+                      "</div>" +
+                    "</div>" +
+                  "</div>" +
+                "</div>");
+
+  // Add the modal to the document
+  $(".card-front", cardFront).append(modal);
+
+  // Show the modal
+  modal.modal('show');
+
+  // Remove the modal from the document when it is closed
+  modal.on('hidden.bs.modal', function (e) {
+    modal.remove();
+
+    // Hide the elements with class d-none
+    cardBack.querySelectorAll(".d-none").forEach(function(element) {
+      element.style.display = "none";
+    });
+  });
+};
+
+
+
+function expandCard(card) {
+  // Add a CSS class to the card that will trigger the expansion animation
+  card.classList.add('expanded');
+
+  // Blur out orremove focus from any other elements on the page
+var otherElements = document.querySelectorAll("body > *:not(.expanded)");
+otherElements.forEach(function(element) {
+element.style.filter = "blur(5px)";
+element.style.pointerEvents = "none";
+});
+
+// Add a close button to the expanded card
+var closeButton = document.createElement("button");
+closeButton.innerHTML = "×";
+closeButton.classList.add("close-button");
+closeButton.addEventListener("click", function() {
+// Remove the CSS class that triggers the expansion animation
+card.classList.remove('expanded');
+// Remove the close button
+closeButton.remove();
+
+// Remove the blur and pointer-events from other elements on the page
+otherElements.forEach(function(element) {
+  element.style.filter = "none";
+  element.style.pointerEvents = "auto";
+});
+});
+
+// Add the close button to the card
+card.appendChild(closeButton);
+}
+
+// Add click event listeners to all scholarship cards
+var scholarshipCards = document.getElementsByClassName("card-front");
+for (var i = 0; i < scholarshipCards.length; i++) {
+scholarshipCards[i].addEventListener("click", function() {
+expandCard(this.parentElement);
+});
+};
+
+// Initialize Isotope
+var scholarshipsContainer = document.getElementById("scholarships");
+var isotope = new Isotope(scholarshipsContainer, {
+  itemSelector: '.card',
+  layoutMode: 'fitRows'
+});
+
+function filterCards() {
+  // Get selected filter values
+  var studyLevel = document.getElementById("studyLevelFilter").value;
+  var scholarshipType = document.getElementById("scholarshipTypeFilter").value;
+  var field = document.getElementById("fieldFilter").value;
+
+  // Get all scholarship cards
+  var scholarshipCards = document.getElementsByClassName("card");
+
+  // Loop through each card and check if it matches the filter criteria
+  for (var i = 0; i < scholarshipCards.length; i++) {
+    var card = scholarshipCards[i];
+    var cardFront = card.querySelector(".card-front");
+    var cardBack = card.querySelector(".card-back");
+
+    // Check if the card matches the selected study level
+    var levelMatch = studyLevel === "all" || cardFront.querySelector(".card-text").textContent === studyLevel;
+
+    // Check if the card matches the selected scholarship type
+    var typeMatch = scholarshipType === "all" || cardBack.textContent.includes(scholarshipType);
+
+    // Check if the card matches the selected field
+    var fieldMatch = field === "all" || cardFront.querySelectorAll(".card-text")[1].textContent === field;
+
+    // Show or hide the card based on the filter criteria
+    if (levelMatch && typeMatch && fieldMatch) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  }
+}
+
+
+
+// Get the search input element
+var searchInput = document.getElementById("searchInput");
+
+// Add an input event listener to the search input field
+searchInput.addEventListener("input", search);
+
+// Function to search through scholarship cards
+function search() {
+  // Retrieve search input value
+  var searchValue = searchInput.value.toUpperCase();
+
+  // Retrieve all scholarship cards
+  var scholarshipCards = document.getElementsByClassName("card");
+
+  // Loop through scholarship cards and hide/show based on search criteria
+  for (var i = 0; i < scholarshipCards.length; i++) {
+    var card = scholarshipCards[i];
+    var cardText = card.textContent || card.innerText;
+    if (searchValue === "" || cardText.toUpperCase().indexOf(searchValue) > -1) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  }
+}
+
+
+</script>
+  </div>
+</body>
+</html>
