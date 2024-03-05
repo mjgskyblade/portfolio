@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Mangani C. Tembo Portfolio">
+    <meta property="og:description" content="A portfolio showcasing Mangani C. Tembo's achievements, education, work experience, and projects.">
+
+    <title>Mangani C. Tembo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="navbar">
+        <ul>
+          <li class="active">
+            <a href="#home"> <h3 class="nav-text">Home</h3>
+              <i class='bx bx-home icon'></i>
+              <i class='bx bxs-home activeIcon'></i>
+            </a>
+          </li>
+          <li>
+            <a href="#accomplishments"> <h3 class="nav-text">Accomplishments</h3>
+              <i class='bx bxs-medal icon'></i>
+              <i class='bx bxs-medal activeIcon'></i>
+            </a>
+          </li>
+          <li>
+            <a href="#education"> <h3 class="nav-text">Education</h3>
+              <i class='bx bxs-graduation icon'></i>
+              <i class='bx bxs-graduation activeIcon'></i>
+            </a>
+          </li>
+          <li>
+            <a href="#work-experience"> <h3 class="nav-text">Experience</h3>
+              <i class='bx bxs-briefcase icon'></i>
+              <i class='bx bxs-briefcase activeIcon'></i>
+            </a>
+          </li>
+          <li>
+            <a href="#contact"> <h3 class="nav-text">Contacts</h3>
+              <i class='bx bx-phone icon'></i>
+              <i class='bx bx-phone activeIcon'></i>
+            </a>
+          </li>
+          <div class="indicator"></div>
+        </ul>
+    </div>
+    
+    <section id="home">
+        <div class="content">
+            <div class="left-content">
+                <img src="https://i.postimg.cc/mrszxxwf/1655542908765-2.jpg" alt="Image" >
+            </div>
+            <div class="right-content">
+                <h1>Mangani C. Tembo</h1>
+                <p>As a graduate of Wenzhou Medical University with a background in medicine (MBBS), 
+                    I bring a unique blend of skills and experiences to the intersection of healthcare and technology. 
+                    While my formal education has focused on medicine,
+                    my time in hospitals has nurtured a deep understanding of empathy and human connection. 
+                    Alongside, I've cultivated foundational skills in front-end and back-end web development technologies such as HTML, CSS, JavaScript, and React. 
+                    I am excited to channel this empathy and my growing proficiency in web development to drive innovation in healthcare and education. 
+                    Committed to continuous learning and personal growth, I am eager to make a meaningful impact in this dynamic and evolving field</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <div class="project-content">
+                <img src="https://i.postimg.cc/yNyJsfQJ/diversed.png" alt="Project 1">
+                <a href="https://diversed.netlify.app/" target="_blank">Visit Website</a>
+            </div>
+        </div>
+        <div class="project">
+            <div class="project-content">
+                <img src="https://i.postimg.cc/8zWJnkLm/lemon.jpg" alt="Project 2">
+                <a href="https://github.com/mjgskyblade/llemon.git" target="_blank">GitHub Repository</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="accomplishments">
+        <h2>Accomplishments</h2>
+        <ul>
+            <li>Fostered Innovation:</li>
+            <li>Created custom scholarship portal, <a href="https://diversed.netlify.app/">Diversed.netlify.app</a>, personally designing and developing a user-friendly platform for accessing scholarship opportunities.</li>
+            <li>Implemented bespoke design and backend infrastructure tailored to the specific needs of students seeking financial assistance.</li>
+            <li>Demonstrated Personal Credibility:</li>
+            <li>Completed the Meta Frontend Developer course in under 2 months, surpassing the standard 6-month timeframe.</li>
+            <li>Dedicated 7 hours daily, showcasing a 42% increase in learning pace.</li>
+            <li>Achieved consistently high quiz scores and project completion rates, providing tangible evidence of proficiency and commitment.</li>
+            <li>Delivered Results-Oriented Solutions:</li>
+            <li>Successfully completed both the Meta Frontend Developer and IBM Full Stack Developer courses within 4 months.</li>
+            <li>Achieved a 33% reduction in the typical completion duration, highlighting adept time management and deep comprehension of key technologies.</li>
+            <li>Proficient in JavaScript, React, HTML, CSS, and full-stack development principles, ready to leverage expertise to drive impactful results for your projects.</li>
+        </ul>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <ul>
+            <li>Frontend Developer Specialization Professional Certificate / Meta</li>
+            <li>Developing Back-End Apps with Node.js / IBM</li>
+            <li>Developing Front-End Apps with React.js Professional Certificate / IBM</li>
+            <li>Getting started with Git and GitHub / IBM</li>
+            <li>Introduction, to HTML, CSS and JavaScript Professional Certificate / IBM</li>
+            <li>Introduction to cloud computing Professional Certificate / IBM</li>
+            <li>CS50x / Harvard University</li>
+            <li>Responsive Web Design / FreeCodeCamp</li>
+            <li>Bachelor of Medicine and Bachelor of Surgery (MBBS) / Wenzhou Medical University, China</li>
+            <li>Grade 12 O-Level Certificate / MCM Nkana Trust School, Kitwe</li>
+        </ul>
+    </section>
+
+    <section id="work-experience">
+        <h2>Work Experience</h2>
+        <ul>
+            <li>Developer | Diversed</li>
+            <li>Intern (Electives) | University Teaching Hospital</li>
+            <li>Clinical Rotation | Sinozam Friendship Hospital</li>
+            <li>Clinical Rotation | Sinozam Friendship Hospital</li>
+        </ul>
+    </section>
+
+    <section id="games">
+        <h2>End of Portfolio</h2>
+        <p>I hope you enjoyed viewing my portfolio. Here are some simple games you may be interested in:</p>
+        <div class="games-container">
+            <div class="game">
+                <h3>Guess the Number</h3>
+                <button onclick="startGuessNumber()">Start Game</button>
+            </div>
+            <div class="game">
+                <h3>Rock, Paper, Scissors</h3>
+                <button onclick="startRockPaperScissors()">Start Game</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-card">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p><i class='bx bx-envelope' style='color:#2b4178' ></i> Email: <a href="mailto:mgitembo@gmail.com">mgitembo@gmail.com</a></p>
+                <p><i class='bx bxl-whatsapp' style="color: #25D366;"></i> WhatsApp/Phone: <a href="tel:+260955975565">+260955975565 (only WhatsApp)</a>, <a href="tel:+260768115994">+260768115994</a></p>
+                <p><i class='bx bx-message-rounded-dots' style="color: #7BB32E;"></i> WeChat: ManganiTemboMJG</p>
+                <p><i class='bx bxl-linkedin' style='color: #0A66C2'  ></i> LinkedIn: <a href="www.linkedin.com/in/mangani-tembo-493654159" target="_blank">Mangani Tembo</a></p>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
