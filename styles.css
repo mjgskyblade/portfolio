@@ -10,6 +10,11 @@
     
     padding-top: 0px; 
 }
+
+.container{
+    padding-top: 152px;
+}
+
   nav{
     height: 100vh;
     display: flex;
