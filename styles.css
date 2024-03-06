@@ -146,6 +146,7 @@
 .progress-bar {
     position: fixed;
     border-radius: 205px;
+    width: 0;
     max-width: 1348px;
     padding-right: 27px;
     top: 119px;
