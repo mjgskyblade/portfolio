@@ -143,6 +143,19 @@
     padding-top: 120px;
 }
 
+.progress-bar {
+    position: fixed;
+    border-radius: 205px;
+    max-width: 1348px;
+    padding-right: 27px;
+    top: 119px;
+    left: calc(17px);
+    right: 114px;
+    height: 3px;
+    background-color: violet;
+    z-index: 895;
+}
+
 section {
     margin-top: 60px;
     padding: 20px;
