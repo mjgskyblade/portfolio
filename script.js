@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             indicator.style.transform = `translateX(calc(${index * 90}px))`;
 
             // Smoothly scroll to the target section
-            targetSection.scrollIntoView({ behavior: "smooth" });
+            targetSection.scrollIntoView({ behavior: "smooth", block: "center" });
         });
     });
 });
